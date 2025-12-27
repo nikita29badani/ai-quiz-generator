@@ -1,0 +1,133 @@
+/* --- Global Styles --- */
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f7fafc;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    margin: 0;
+    color: #2d3748;
+}
+
+.container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+h1 { color: #2b6cb0; margin-bottom: 20px; }
+h2 { color: #4a5568; margin-top: 0; }
+hr { border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0; }
+
+/* --- Inputs (Text/Email/Password ONLY) --- */
+/* IMPORTANT: Sirf likhne wale inputs ko bada karenge, radio ko nahi */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px;
+    width: 80%;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+input:focus { border-color: #4299e1; outline: none; }
+
+/* --- Buttons --- */
+button {
+    padding: 12px 25px;
+    background-color: #4299e1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 80%;
+    margin-bottom: 10px;
+    transition: 0.2s;
+    font-weight: 600;
+}
+button:hover { background-color: #3182ce; }
+
+/* --- Utility Classes --- */
+.hidden { display: none; }
+.toggle-text { color: #3182ce; cursor: pointer; font-size: 14px; margin-top: 10px; }
+.toggle-text:hover { text-decoration: underline; }
+
+/* --- Header & Logout --- */
+.user-header { display: flex; justify-content: space-between; align-items: center; }
+.logout-btn { background-color: #e53e3e; width: auto; padding: 8px 15px; font-size: 14px; margin: 0; }
+.logout-btn:hover { background-color: #c53030; }
+
+/* --- Quiz Grid Layout (2 Cards per Row) --- */
+#questions-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    text-align: left; /* Text wapas left mein laaya */
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    #questions-container { grid-template-columns: 1fr; }
+}
+
+/* --- Question Cards --- */
+.question-card {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+.question-card h3 { font-size: 1.1rem; margin-bottom: 15px; color: #2d3748; }
+
+.options-box { display: flex; flex-direction: column; gap: 10px; }
+
+/* --- 🌟 MAIN FIX: The Option Labels (Radio + Text) 🌟 --- */
+label {
+    display: flex; /* Flexbox use karenge taaki ek line mein aayein */
+    align-items: center; /* Upar-neeche se center */
+    justify-content: flex-start; /* Sab kuch LEFT side mein chipak jaye */
+    padding: 12px;
+    background-color: #f7fafc;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%; /* Label poori choudai lega */
+}
+
+label:hover { background-color: #ebf8ff; border-color: #bee3f8; }
+
+/* --- RADIO BUTTON FIX --- */
+input[type="radio"] { 
+    width: auto; /* <--- YE THA CULPRIT! Ab width normal (choti) ho gayi */
+    margin-right: 12px; /* Button aur text ke beech thoda gap */
+    transform: scale(1.2); /* Thoda sa bada dikhe */
+    accent-color: #4299e1; /* Blue color */
+    flex-shrink: 0; /* Radio button pichkega nahi agar text lamba ho */
+}
+
+/* --- Review Mode Colors --- */
+label.correct { background-color: #c6f6d5 !important; border: 1px solid #48bb78 !important; color: #22543d; }
+label.wrong { background-color: #fed7d7 !important; border: 1px solid #f56565 !important; color: #742a2a; }
+label.dimmed { opacity: 0.5; pointer-events: none; }
+
+/* --- Score Section --- */
+.score-circle { font-size: 3.5rem; font-weight: bold; color: #4299e1; margin: 20px 0; }
+.submit-btn { background-color: #48bb78; margin-top: 30px; width: 50%; }
+.submit-btn:hover { background-color: #38a169; }
+.review-btn { background-color: #ed8936; }
+.review-btn:hover { background-color: #dd6b20; }
+.retry-btn { background-color: #718096; }
+.retry-btn:hover { background-color: #4a5568; }

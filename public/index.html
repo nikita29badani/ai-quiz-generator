@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Quiz Pro 🎓</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🎓 AI Quiz Pro</h1>
+        
+        <div id="auth-box">
+            <h2 id="auth-title">Login</h2>
+            
+            <input type="text" id="username" placeholder="Username" class="hidden">
+            <input type="email" id="email" placeholder="Email Address">
+            <input type="password" id="password" placeholder="Password">
+            
+            <button onclick="handleAuth()" id="auth-btn">Login 🔐</button>
+            
+            <p class="toggle-text" onclick="toggleAuthMode()">
+                <span id="auth-toggle-text">Don't have an account? Register</span>
+            </p>
+        </div>
+
+        <div id="app-box" class="hidden">
+            <div class="user-header">
+                <span>Welcome, <b id="user-display">User</b>!</span>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+            <hr>
+
+            <div id="setup-box">
+                <p>Enter a topic to generate a quiz instantly.</p>
+                <input type="text" id="topicInput" placeholder="Ex: Python, World History, Space...">
+                <button onclick="startQuiz()">Generate Quiz 🚀</button>
+                <p id="loading" class="hidden">🤖 Generating Quiz... Please wait.</p>
+            </div>
+
+            <div id="quiz-box" class="hidden">
+                <h2 id="quiz-topic-title"></h2>
+                <div id="questions-container"></div>
+                
+                <button id="submit-btn" onclick="submitQuiz()" class="submit-btn">Submit Test ✅</button>
+                <button id="restart-btn" onclick="resetQuizView()" class="hidden restart-btn">Take New Test 🔄</button>
+            </div>
+
+            <div id="score-box" class="hidden">
+                <h2>🎉 Quiz Completed!</h2>
+                <div class="score-circle">
+                    <span id="score-display">0</span>/10
+                </div>
+                <p id="feedback-msg"></p>
+                
+                <div class="action-buttons">
+                    <button onclick="showReview()" class="review-btn">Review Answers 🧐</button>
+                    <button onclick="resetQuizView()" class="retry-btn">New Quiz 🔄</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
