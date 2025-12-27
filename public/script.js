@@ -1,6 +1,6 @@
 let isRegistering = false;
 let quizData = [];
-const API_URL = 'http://localhost:3000';
+const API_URL = '';
 
 // Check if user is already logged in on page load
 window.onload = () => {
