@@ -1,4 +1,4 @@
-# 🎓 AI Quiz Pro
+# AI Quiz Pro
 
 **AI Quiz Pro** is an intelligent, full-stack quiz application that generates unique multiple-choice questions on *any* topic instantly using **Google's Gemini AI**. It features secure user authentication, real-time scoring, and a responsive design.
 
@@ -6,7 +6,7 @@
 
 ---
 
-## 🚀 Features
+# Features
 
 - * AI-Powered:* Generates unlimited quizzes on any topic using Google Gemini 1.5 Flash.
 - * Secure Authentication:* User registration and login system using **JWT** (JSON Web Tokens) and **Bcrypt**.
